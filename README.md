@@ -5,3 +5,5 @@ I added the option for the generator to generate upper and lower case letters fo
 I added the option to choose if the user wants lowercase letters. I also added the numbers and special symbols characters. Added while loop to generatePassword function.
 
 Added full list of each character type. 
+
+Added alerts that require user to enter a valid number as well as a valid length between 8 and 128. Also required user to slect at least one of the character options for their password.
