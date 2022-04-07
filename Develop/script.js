@@ -46,59 +46,63 @@ function generatePassword() {
 
   var lengthOfPassword = prompt("Enter length of password");
 
-  var isLowerCaseRequired = confirm("Do you want to include lowercase letters?");
-
-  var isUpperCaseRequired = confirm("Do you want to include uppercase letters?")
   
-  var isNumberRequired = confirm("Do you want to include numbers?")
+      if(!(lengthOfPassword >= 8 && lengthOfPassword <= 128))
+      {
+        alert("Please enter a valid number - greater than 8 and below 128")
+        return "";
+      }
+      else
+      {
+        var isLowerCaseRequired = confirm("Do you want to include lowercase letters?");
 
-  var isSpecialCharacterRequired = confirm("Do you want to include special characters?")
-  //console.log(isLowerCaseRequired)
-
-  var tempCharacter = "";
-  var result = "";
-
-  var option;
-
-  if(isLowerCaseRequired == false && isUpperCaseRequired == false && isNumberRequired == false && isSpecialCharacterRequired == false) {
-  alert("Please select one of the character options for the password.")
-  }
-  else
-  {
-    if(lengthOfPassword >= 8 && lengthOfPassword <= 128) {
-
-      do {    
-     
-        option = Math.round(Math.random()*3)
-    
-        if(option == 0 && isLowerCaseRequired) {
-        tempCharacter = lowerCaseLetters();
-        } 
-    
-    
-        if(option == 1 && isUpperCaseRequired) {
-        tempCharacter = upperCaseLetters();    
+        var isUpperCaseRequired = confirm("Do you want to include uppercase letters?")
+        
+        var isNumberRequired = confirm("Do you want to include numbers?")
+  
+        var isSpecialCharacterRequired = confirm("Do you want to include special characters?")
+        //console.log(isLowerCaseRequired)
+  
+        var tempCharacter = "";
+        var result = "";
+  
+        var option;
+        if(isLowerCaseRequired == false && isUpperCaseRequired == false && isNumberRequired == false && isSpecialCharacterRequired == false) {
+          alert("Please select one of the character options for the password.")
         }
-        if(option == 2 && isNumberRequired) {
-          tempCharacter = numbers();    
-        }    
-        if(option == 3 && isSpecialCharacterRequired) {
-          tempCharacter = specialSymbols();    
+        else
+        {
+          
+
+            do {    
+          
+              option = Math.round(Math.random()*3)
+          
+              if(option == 0 && isLowerCaseRequired) {
+              tempCharacter = lowerCaseLetters();
+              } 
+          
+          
+              if(option == 1 && isUpperCaseRequired) {
+              tempCharacter = upperCaseLetters();    
+              }
+              if(option == 2 && isNumberRequired) {
+                tempCharacter = numbers();    
+              }    
+              if(option == 3 && isSpecialCharacterRequired) {
+                tempCharacter = specialSymbols();    
+              }
+          
+          
+              result = result + tempCharacter;
+          
+            } while(result.length < lengthOfPassword)
+            
+          
+          
         }
     
-    
-        result = result + tempCharacter;
-    
-      } while(result.length < lengthOfPassword)
-      
     }
-    else{
-      alert("Please enter a valid number - greater than 8 and below 128")
-    }
-  }
-
- 
-
   
 
 
