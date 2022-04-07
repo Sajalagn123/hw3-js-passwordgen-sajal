@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 function lowerCaseLetters() {
   
-  var listOfCharacters = ['a','b','c','d','e'];
+  var listOfCharacters = ['a','b','c','d','e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
   var randomIndex;
 
   randomIndex = Math.round(Math.random()*4)
@@ -13,7 +13,7 @@ function lowerCaseLetters() {
 
 function upperCaseLetters() {
   
-  var listOfCharacters = ['A','B','C','D','E'];
+  var listOfCharacters = ['A','B','C','D','E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
   var randomIndex;
 
   randomIndex = Math.round(Math.random()*4)
@@ -23,7 +23,7 @@ function upperCaseLetters() {
 
 function numbers() {
   
-  var listOfCharacters = ['1','2','3','4','5'];
+  var listOfCharacters = ['1','2','3','4','5', '6', '7', '8', '9', '0'];
   var randomIndex;
 
   randomIndex = Math.round(Math.random()*4)
@@ -33,7 +33,7 @@ function numbers() {
 
 function specialSymbols() {
   
-  var listOfCharacters = ['!','@','#','$','%'];
+  var listOfCharacters = ['!','@','#','$','%', '^', '&', '*', '(', ')','`','~','-','_','=','+','[','{',']','}',';',':','\'','"','\\','|',',','<','.','>','/','?'];
   var randomIndex;
 
   randomIndex = Math.round(Math.random()*4)
@@ -46,8 +46,13 @@ function generatePassword() {
 
   var lengthOfPassword = prompt("Enter length of password");
 
-  var isLowerCaseRequired = confirm("Do you want to include lowercase letters");
+  var isLowerCaseRequired = confirm("Do you want to include lowercase letters?");
 
+  var isUpperCaseRequired = confirm("Do you want to include uppercase letters?")
+  
+  var isNumberRequired = confirm("Do you want to include numbers?")
+
+  var isSpecialCharacterRequired = confirm("Do you want to include special characters?")
   //console.log(isLowerCaseRequired)
 
   var tempCharacter = "";
@@ -61,18 +66,18 @@ function generatePassword() {
    
     option = Math.round(Math.random()*3)
 
-    if(option == 0 && isLowerCaseRequired == true) {
+    if(option == 0 && isLowerCaseRequired) {
     tempCharacter = lowerCaseLetters();
     } 
 
 
-    if(option == 1) {
+    if(option == 1 && isUpperCaseRequired) {
     tempCharacter = upperCaseLetters();    
     }
-    if(option == 2) {
+    if(option == 2 && isNumberRequired) {
       tempCharacter = numbers();    
     }    
-    if(option == 3) {
+    if(option == 3 && isSpecialCharacterRequired) {
       tempCharacter = specialSymbols();    
     }
 
