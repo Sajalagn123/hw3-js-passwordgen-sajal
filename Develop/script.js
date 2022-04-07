@@ -60,31 +60,48 @@ function generatePassword() {
 
   var option;
 
+  if(isLowerCaseRequired == false && isUpperCaseRequired == false && isNumberRequired == false && isSpecialCharacterRequired == false) {
+  alert("Please select one of the character options for the password.")
+  }
+  else
+  {
+    if(lengthOfPassword >= 8 && lengthOfPassword <= 128) {
+
+      do {    
+     
+        option = Math.round(Math.random()*3)
+    
+        if(option == 0 && isLowerCaseRequired) {
+        tempCharacter = lowerCaseLetters();
+        } 
+    
+    
+        if(option == 1 && isUpperCaseRequired) {
+        tempCharacter = upperCaseLetters();    
+        }
+        if(option == 2 && isNumberRequired) {
+          tempCharacter = numbers();    
+        }    
+        if(option == 3 && isSpecialCharacterRequired) {
+          tempCharacter = specialSymbols();    
+        }
+    
+    
+        result = result + tempCharacter;
+    
+      } while(result.length < lengthOfPassword)
+      
+    }
+    else{
+      alert("Please enter a valid number - greater than 8 and below 128")
+    }
+  }
+
+ 
+
   
 
-  do {    
-   
-    option = Math.round(Math.random()*3)
 
-    if(option == 0 && isLowerCaseRequired) {
-    tempCharacter = lowerCaseLetters();
-    } 
-
-
-    if(option == 1 && isUpperCaseRequired) {
-    tempCharacter = upperCaseLetters();    
-    }
-    if(option == 2 && isNumberRequired) {
-      tempCharacter = numbers();    
-    }    
-    if(option == 3 && isSpecialCharacterRequired) {
-      tempCharacter = specialSymbols();    
-    }
-
-
-    result = result + tempCharacter;
-
-  } while(result.length < lengthOfPassword)
 
   return result;
 }
