@@ -46,26 +46,24 @@ function generatePassword() {
 
   var lengthOfPassword = prompt("Enter length of password");
 
-  var isLowerCaseRequired = confirm("Do you want to include lowercase letters");
+  //var isLowerCaseRequired = confirm("Do you want to include lowercase letters");
 
   //console.log(isLowerCaseRequired)
 
-  var tempCharacter = "";
+  var tempCharacter;
   var result = "";
 
   var option;
 
   
 
-  do {    
+  for(var i=0; i < lengthOfPassword ; i++) {    
    
     option = Math.round(Math.random()*3)
 
-    if(option == 0 && isLowerCaseRequired == true) {
+    if(option == 0) {
     tempCharacter = lowerCaseLetters();
-    } 
-
-
+    }
     if(option == 1) {
     tempCharacter = upperCaseLetters();    
     }
@@ -79,7 +77,7 @@ function generatePassword() {
 
     result = result + tempCharacter;
 
-  } while(result.length < lengthOfPassword)
+  }
 
   return result;
 }
