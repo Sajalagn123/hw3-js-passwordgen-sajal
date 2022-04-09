@@ -46,7 +46,12 @@ function generatePassword() {
 
   var lengthOfPassword = prompt("Enter length of password");
 
-  
+      console.log(lengthOfPassword);
+      if(lengthOfPassword == null)
+      {
+        return "";
+      }
+      
       if(!(lengthOfPassword >= 8 && lengthOfPassword <= 128))
       {
         alert("Please enter a valid number - greater than 8 and below 128")

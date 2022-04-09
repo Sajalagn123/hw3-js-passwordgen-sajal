@@ -12,9 +12,13 @@ body,
   padding: 0;
 }
 
+h1  {
+  color: rgb(0, 0, 0);
+}
+
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: #5bff91;
 }
 
 .wrapper {
@@ -74,7 +78,7 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: rgb(33, 8, 175);
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
